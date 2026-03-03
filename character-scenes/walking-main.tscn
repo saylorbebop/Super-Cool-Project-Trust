@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8xeml"]
 
 [node name="WalkingMain" type="CharacterBody3D" unique_id=106002449]
+collision_mask = 2
 script = ExtResource("1_wyyiq")
 
 [node name="CharacterModelManager" parent="." unique_id=1412849945 instance=ExtResource("2_8xeml")]

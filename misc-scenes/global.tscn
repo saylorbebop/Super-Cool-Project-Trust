@@ -4,7 +4,7 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yy78s"]
 
-[node name="origin point globals" type="Node3D" unique_id=1182101982]
+[node name="Global" type="Node3D" unique_id=1182101982]
 script = ExtResource("1_ddioa")
 
 [node name="floor enforcer" type="StaticBody3D" parent="." unique_id=1805574432]

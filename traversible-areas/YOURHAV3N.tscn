@@ -1,31 +1,84 @@
 [gd_scene format=3 uid="uid://clvdxn2li23e"]
 
-[ext_resource type="PackedScene" uid="uid://duh5g6h0tw8am" path="res://misc-scenes/global.tscn" id="1_c7lgf"]
 [ext_resource type="PackedScene" uid="uid://b4dius8xnj2nq" path="res://character-scenes/walking-main.tscn" id="2_x37xe"]
 [ext_resource type="PackedScene" uid="uid://41kx2mm6mqto" path="res://misc-scenes/camera-mover.tscn" id="3_hka2l"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_c7lgf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x37xe"]
+size = Vector3(2, 2, 0.001)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hka2l"]
+size = Vector3(3.365, 2.975, 2.85)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovlhl"]
 
 [node name="YOURHAV3N" type="Node3D" unique_id=793937835]
 
-[node name="origin point globals" parent="." unique_id=1182101982 instance=ExtResource("1_c7lgf")]
-
 [node name="WalkingMain" parent="." unique_id=106002449 instance=ExtResource("2_x37xe")]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1300129428]
+[node name="SpotLight3D" type="SpotLight3D" parent="WalkingMain" unique_id=1300129428]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.8414745, 0)
 
+[node name="Wall1" type="StaticBody3D" parent="." unique_id=830607297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0886848)
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall1" unique_id=474325721]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 1, 0)
+mesh = SubResource("QuadMesh_c7lgf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1" unique_id=1409086132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063476563, 1, 0)
+shape = SubResource("BoxShape3D_x37xe")
+
+[node name="Wall2" type="StaticBody3D" parent="." unique_id=1044013484]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1.3222024)
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2" unique_id=1377719960]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 1, 0)
+mesh = SubResource("QuadMesh_c7lgf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=1975874107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063476563, 1, 0)
+shape = SubResource("BoxShape3D_x37xe")
+
+[node name="Wall3" type="StaticBody3D" parent="." unique_id=178917547]
+transform = Transform3D(-6.035108e-08, 0, -1, 0, 1, 0, 1.3806717, 0, -4.371139e-08, -1.0217822, 0, -0.14007723)
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall3" unique_id=1658750019]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 1, 0)
+mesh = SubResource("QuadMesh_c7lgf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3" unique_id=1818370291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063476563, 1, 0)
+shape = SubResource("BoxShape3D_x37xe")
+
 [node name="CameraMover" parent="." unique_id=761743363 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6938057, -3.9890268)
 area = NodePath("Area3D")
-dummy_child = NodePath("Dummy")
+dummy_child = NodePath("Marker3D")
 
-[node name="Area3D" type="Area3D" parent="CameraMover" unique_id=127796959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7700064)
+[node name="Area3D" type="Area3D" parent="CameraMover" unique_id=1500715336]
+collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Area3D" unique_id=2015267408]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.0284348, -5.6801343)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Area3D" unique_id=1998006604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_hka2l")
 
-[node name="Dummy" type="Node3D" parent="CameraMover" unique_id=925672722]
-transform = Transform3D(-0.5265351, -0.10755716, 0.84332216, 0.31946656, 0.8942324, 0.3135117, -0.7878465, 0.43448812, -0.4364838, 5.998646, 1.2878041, 2.5569472)
+[node name="Marker3D" type="Marker3D" parent="CameraMover" unique_id=2051084862]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.80054975, 1.7432227, -1.2215166)
+
+[node name="CameraMover2" parent="." unique_id=1472893467 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
+area = NodePath("Area3D")
+dummy_child = NodePath("Marker3D")
+
+[node name="Area3D" type="Area3D" parent="CameraMover2" unique_id=2056955914]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=151794565]
+transform = Transform3D(1, 0, 0, 0, 2.313376, 0, 0, 0, 7.4005423, 3.144637, 1.0912699, 0)
+shape = SubResource("BoxShape3D_ovlhl")
+
+[node name="Marker3D" type="Marker3D" parent="CameraMover2" unique_id=477222569]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.949744, 1.7460301, 0)
