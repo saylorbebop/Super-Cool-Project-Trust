@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://duh5g6h0tw8am" path="res://misc-scenes/origin-point-globals.tscn" id="1_c7lgf"]
 [ext_resource type="PackedScene" uid="uid://b4dius8xnj2nq" path="res://character-scenes/walking-main.tscn" id="2_x37xe"]
+[ext_resource type="PackedScene" uid="uid://41kx2mm6mqto" path="res://misc-scenes/camera-mover.tscn" id="3_hka2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hka2l"]
 
 [node name="YOURHAV3N" type="Node3D" unique_id=793937835]
 
@@ -11,3 +14,19 @@
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1300129428]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.8414745, 0)
+
+[node name="CameraMover" parent="." unique_id=761743363 node_paths=PackedStringArray("origin_point_globals") instance=ExtResource("3_hka2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6938057, -3.9890268)
+origin_point_globals = NodePath("../origin point globals")
+
+[node name="Areas" type="Node3D" parent="CameraMover" unique_id=1175126742]
+
+[node name="Area3D" type="Area3D" parent="CameraMover/Areas" unique_id=127796959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7700064)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Areas/Area3D" unique_id=2015267408]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.0284348, -5.6801343)
+shape = SubResource("BoxShape3D_hka2l")
+
+[node name="Dummy" type="Node3D" parent="CameraMover" unique_id=925672722]
+transform = Transform3D(-0.5265351, -0.10755716, 0.84332216, 0.31946656, 0.8942324, 0.3135117, -0.7878465, 0.43448812, -0.4364838, 5.998646, 1.2878041, 2.5569472)
