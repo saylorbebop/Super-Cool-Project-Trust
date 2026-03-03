@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duh5g6h0tw8am"]
 
-[ext_resource type="Script" uid="uid://ddf3rylu7vch6" path="res://misc-scenes/origin_point_globals.gd" id="1_ddioa"]
+[ext_resource type="Script" uid="uid://ddf3rylu7vch6" path="res://misc-scenes/global.gd" id="1_ddioa"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yy78s"]
 
