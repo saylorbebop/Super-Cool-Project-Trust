@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://41kx2mm6mqto"]
+
+[ext_resource type="Script" uid="uid://dx6qp37br8sgd" path="res://misc-scenes/camera-mover.gd" id="1_5bsxn"]
+
+[node name="CameraMover" type="Node3D" unique_id=761743363]
+script = ExtResource("1_5bsxn")

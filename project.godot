@@ -14,6 +14,10 @@ config/name="Project Scene"
 run/main_scene="uid://clvdxn2li23e"
 config/features=PackedStringArray("4.6")
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdscript-linter/plugin.cfg")
+
 [input]
 
 move_left={
