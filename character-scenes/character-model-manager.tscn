@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://peu3npkvceax"]
+
+[ext_resource type="Script" uid="uid://dp7l0h4ggbjjx" path="res://character-scenes/character_model_manager.gd" id="1_8qxfu"]
+
+[node name="CharacterModelManager" type="Node3D" unique_id=1412849945]
+script = ExtResource("1_8qxfu")

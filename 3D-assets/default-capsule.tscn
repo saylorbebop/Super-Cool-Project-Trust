@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cesakh2icbo7u"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dg600"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cnccp"]
+radius = 0.1
+height = 1.0
+
+[node name="DefaultCapsule" type="Node3D" unique_id=199093041]
+
+[node name="main" type="MeshInstance3D" parent="." unique_id=1315627897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_dg600")
+
+[node name="pinnochio" type="MeshInstance3D" parent="." unique_id=307329450]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 1.7731023, -0.7210528)
+mesh = SubResource("CapsuleMesh_cnccp")

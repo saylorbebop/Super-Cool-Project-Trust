@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b4dius8xnj2nq"]
+
+[ext_resource type="Script" uid="uid://c0bcvdayqh75e" path="res://character-scenes/walking_main.gd" id="1_wyyiq"]
+[ext_resource type="PackedScene" uid="uid://peu3npkvceax" path="res://character-scenes/character-model-manager.tscn" id="2_8xeml"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8xeml"]
+
+[node name="WalkingMain" type="CharacterBody3D" unique_id=106002449]
+script = ExtResource("1_wyyiq")
+
+[node name="CharacterModelManager" parent="." unique_id=1412849945 instance=ExtResource("2_8xeml")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=951114922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_8xeml")

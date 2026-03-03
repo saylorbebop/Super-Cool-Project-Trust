@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://clvdxn2li23e"]
+
+[ext_resource type="PackedScene" uid="uid://duh5g6h0tw8am" path="res://misc-scenes/origin-point-globals.tscn" id="1_c7lgf"]
+[ext_resource type="PackedScene" uid="uid://b4dius8xnj2nq" path="res://character-scenes/walking-main.tscn" id="2_x37xe"]
+
+[node name="YOURHAV3N" type="Node3D" unique_id=793937835]
+
+[node name="origin point globals" parent="." unique_id=1182101982 instance=ExtResource("1_c7lgf")]
+
+[node name="WalkingMain" parent="." unique_id=106002449 instance=ExtResource("2_x37xe")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1300129428]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.8414745, 0)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://duh5g6h0tw8am"]
+
+[ext_resource type="Script" uid="uid://ddf3rylu7vch6" path="res://misc-scenes/origin_point_globals.gd" id="1_ddioa"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yy78s"]
+
+[node name="origin point globals" type="Node3D" unique_id=1182101982]
+script = ExtResource("1_ddioa")
+
+[node name="floor enforcer" type="StaticBody3D" parent="." unique_id=1805574432]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor enforcer" unique_id=2128341993]
+shape = SubResource("WorldBoundaryShape3D_yy78s")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1982429217]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.855111, 0.518445, 0, -0.518445, 0.855111, 0, 3.335208, 3.0130386)
