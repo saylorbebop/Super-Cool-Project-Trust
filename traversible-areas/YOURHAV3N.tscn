@@ -16,6 +16,7 @@ size = Vector3(3.365, 2.975, 2.85)
 [node name="YOURHAV3N" type="Node3D" unique_id=793937835]
 
 [node name="WalkingMain" parent="." unique_id=106002449 instance=ExtResource("2_x37xe")]
+collision_mask = 1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="WalkingMain" unique_id=1300129428]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.8414745, 0)
@@ -61,7 +62,6 @@ area = NodePath("Area3D")
 dummy_child = NodePath("Marker3D")
 
 [node name="Area3D" type="Area3D" parent="CameraMover" unique_id=1500715336]
-collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Area3D" unique_id=1998006604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -71,10 +71,12 @@ shape = SubResource("BoxShape3D_hka2l")
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.80054975, 1.7432227, -1.2215166)
 
 [node name="CameraMover2" parent="." unique_id=1472893467 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7119758, 0, 0)
 area = NodePath("Area3D")
 dummy_child = NodePath("Marker3D")
 
 [node name="Area3D" type="Area3D" parent="CameraMover2" unique_id=2056955914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056515217, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=151794565]
 transform = Transform3D(1, 0, 0, 0, 2.313376, 0, 0, 0, 7.4005423, 3.144637, 1.0912699, 0)

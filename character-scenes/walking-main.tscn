@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8xeml"]
 
-[node name="WalkingMain" type="CharacterBody3D" unique_id=106002449]
+[node name="WalkingMain" type="CharacterBody3D" unique_id=106002449 groups=["TriggersCameraMover"]]
 collision_mask = 2
 script = ExtResource("1_wyyiq")
 

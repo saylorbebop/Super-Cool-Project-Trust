@@ -22,6 +22,10 @@ Global="*uid://duh5g6h0tw8am"
 
 enabled=PackedStringArray("res://addons/gdscript-linter/plugin.cfg")
 
+[global_group]
+
+TriggersCameraMover="Any body that should trigger camera movements in freeroam scenes when it enters the CameraMovers' Area3Ds."
+
 [input]
 
 move_left={
