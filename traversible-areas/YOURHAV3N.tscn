@@ -3,84 +3,63 @@
 [ext_resource type="PackedScene" uid="uid://b4dius8xnj2nq" path="res://character-scenes/walking-main.tscn" id="2_x37xe"]
 [ext_resource type="PackedScene" uid="uid://41kx2mm6mqto" path="res://misc-scenes/camera-mover.tscn" id="3_hka2l"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_c7lgf"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_x37xe"]
-size = Vector3(2, 2, 0.001)
+size = Vector3(5.5, 4, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hka2l"]
-size = Vector3(3.365, 2.975, 2.85)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ovlhl"]
+size = Vector3(4.4, 4, 16)
 
 [node name="YOURHAV3N" type="Node3D" unique_id=793937835]
 
 [node name="WalkingMain" parent="." unique_id=106002449 instance=ExtResource("2_x37xe")]
 collision_mask = 1
 
-[node name="SpotLight3D" type="SpotLight3D" parent="WalkingMain" unique_id=1300129428]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.8414745, 0)
-
-[node name="Wall1" type="StaticBody3D" parent="." unique_id=830607297]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0886848)
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall1" unique_id=474325721]
-transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 1, 0)
-mesh = SubResource("QuadMesh_c7lgf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1" unique_id=1409086132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063476563, 1, 0)
-shape = SubResource("BoxShape3D_x37xe")
-
-[node name="Wall2" type="StaticBody3D" parent="." unique_id=1044013484]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1.3222024)
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2" unique_id=1377719960]
-transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 1, 0)
-mesh = SubResource("QuadMesh_c7lgf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=1975874107]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063476563, 1, 0)
-shape = SubResource("BoxShape3D_x37xe")
-
-[node name="Wall3" type="StaticBody3D" parent="." unique_id=178917547]
-transform = Transform3D(-6.035108e-08, 0, -1, 0, 1, 0, 1.3806717, 0, -4.371139e-08, -1.0217822, 0, -0.14007723)
-collision_mask = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall3" unique_id=1658750019]
-transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 1, 0)
-mesh = SubResource("QuadMesh_c7lgf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3" unique_id=1818370291]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063476563, 1, 0)
-shape = SubResource("BoxShape3D_x37xe")
+[node name="OmniLight3D" type="OmniLight3D" parent="WalkingMain" unique_id=393088821]
 
 [node name="CameraMover" parent="." unique_id=761743363 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
 area = NodePath("Area3D")
 dummy_child = NodePath("Marker3D")
 
-[node name="Area3D" type="Area3D" parent="CameraMover" unique_id=1500715336]
+[node name="Area3D" type="Area3D" parent="CameraMover" unique_id=221998635]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Area3D" unique_id=1998006604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_hka2l")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Area3D" unique_id=1602072772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1)
+shape = SubResource("BoxShape3D_x37xe")
 
-[node name="Marker3D" type="Marker3D" parent="CameraMover" unique_id=2051084862]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.80054975, 1.7432227, -1.2215166)
+[node name="Marker3D" type="Marker3D" parent="CameraMover" unique_id=825212010]
+transform = Transform3D(0.9115789, -0.28276297, 0.29844433, 1.8997302e-08, 0.72592074, 0.68777835, -0.41112524, -0.6269642, 0.661734, 2.3855507, 4.788321, 2.1482534)
 
-[node name="CameraMover2" parent="." unique_id=1472893467 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7119758, 0, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1436439404]
+transform = Transform3D(7, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2, 4)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=713753680]
+transform = Transform3D(-3.059797e-07, 0, 1, 0, 4, 0, -7, 0, -4.371139e-08, 4, 2, 1)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1713762332]
+transform = Transform3D(-3.059797e-07, 0, 1, 0, 4, 0, -7, 0, -4.371139e-08, -4, 2, 1)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1159914121]
+transform = Transform3D(9, 0, 0, 0, 4, 0, 0, 0, 15, 0, 2, -10)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D4" unique_id=866840584]
+transform = Transform3D(0.44444445, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0.06666666)
+operation = 2
+use_collision = true
+
+[node name="CameraMover2" parent="." unique_id=1898929495 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.6314178)
 area = NodePath("Area3D")
 dummy_child = NodePath("Marker3D")
 
-[node name="Area3D" type="Area3D" parent="CameraMover2" unique_id=2056955914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056515217, 0, 0)
+[node name="Area3D" type="Area3D" parent="CameraMover2" unique_id=1878968120]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=151794565]
-transform = Transform3D(1, 0, 0, 0, 2.313376, 0, 0, 0, 7.4005423, 3.144637, 1.0912699, 0)
-shape = SubResource("BoxShape3D_ovlhl")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=1127520643]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 2, -3)
+shape = SubResource("BoxShape3D_hka2l")
 
-[node name="Marker3D" type="Marker3D" parent="CameraMover2" unique_id=477222569]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.949744, 1.7460301, 0)
+[node name="Marker3D" type="Marker3D" parent="CameraMover2" unique_id=1598630730]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 6, 8)
