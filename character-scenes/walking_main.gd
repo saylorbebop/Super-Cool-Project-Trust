@@ -1,7 +1,8 @@
 ## Main freeroam player character scene. Is on collision mask 2, for detection by camera movers.
 extends CharacterBody3D
 
-const MOVEMENT_SPEED = 2.0
+const WALK_SPEED = 4.0
+const RUN_SPEED = 6.5
 const SLOWDOWN_COEFFICIENT = 3 # the higher, the faster. 1 = 1 second to stop after release of mvmnt key.
 
 func _ready() -> void:
@@ -48,6 +49,11 @@ func _physics_process(delta: float) -> void:
 	
 	if update_rot: look_at(global_position + direction, Vector3.UP)
 	
+	var running: bool
+	if Input.is_action_pressed("run"):
+		running = true
+	
+	var MOVEMENT_SPEED: float = RUN_SPEED if running else WALK_SPEED
 	if direction:
 		velocity.x = direction.x * MOVEMENT_SPEED
 		velocity.z = direction.z * MOVEMENT_SPEED

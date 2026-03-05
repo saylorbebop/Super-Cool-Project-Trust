@@ -2,12 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://b4dius8xnj2nq" path="res://character-scenes/walking-main.tscn" id="2_x37xe"]
 [ext_resource type="PackedScene" uid="uid://41kx2mm6mqto" path="res://misc-scenes/camera-mover.tscn" id="3_hka2l"]
+[ext_resource type="Texture2D" uid="uid://b4fxe8jdjyj7q" path="res://yourhav3n reference.jpg" id="3_ovlhl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x37xe"]
 size = Vector3(5.5, 4, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hka2l"]
-size = Vector3(4.4, 4, 16)
+size = Vector3(3, 4, 14.002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovlhl"]
+size = Vector3(3, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4vyy"]
+size = Vector3(3, 4, 3)
 
 [node name="YOURHAV3N" type="Node3D" unique_id=793937835]
 
@@ -25,30 +32,39 @@ dummy_child = NodePath("Marker3D")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover/Area3D" unique_id=1602072772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1)
 shape = SubResource("BoxShape3D_x37xe")
+debug_color = Color(0.7746755, 0.4418904, 0, 0.41960785)
 
 [node name="Marker3D" type="Marker3D" parent="CameraMover" unique_id=825212010]
 transform = Transform3D(0.9115789, -0.28276297, 0.29844433, 1.8997302e-08, 0.72592074, 0.68777835, -0.41112524, -0.6269642, 0.661734, 2.3855507, 4.788321, 2.1482534)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1436439404]
-transform = Transform3D(7, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2, 4)
+transform = Transform3D(11, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2, 5)
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=713753680]
-transform = Transform3D(-3.059797e-07, 0, 1, 0, 4, 0, -7, 0, -4.371139e-08, 4, 2, 1)
+transform = Transform3D(-3.934025e-07, 0, 1, 0, 4, 0, -9, 0, -4.371139e-08, 5, 2, 0)
 use_collision = true
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1713762332]
-transform = Transform3D(-3.059797e-07, 0, 1, 0, 4, 0, -7, 0, -4.371139e-08, -4, 2, 1)
+transform = Transform3D(-3.934025e-07, 0, 1, 0, 4, 0, -9, 0, -4.371139e-08, -5, 2, 0)
 use_collision = true
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1159914121]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=204948771]
 transform = Transform3D(9, 0, 0, 0, 4, 0, 0, 0, 15, 0, 2, -10)
 use_collision = true
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D4" unique_id=866840584]
-transform = Transform3D(0.44444445, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0.06666666)
-operation = 2
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1607173624]
+transform = Transform3D(2.4444444, 0, 0, 0, 1, 0, 0, 0, 0.066666655, 0, 0, -0.5333333)
 use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1159914121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=793735064]
+transform = Transform3D(0.8000001, 0, 0, 0, 1, 0, 0, 0, 0.99999857, 0, 0, -0.06036383)
+operation = 2
+size = Vector3(1, 1, 1.1732178)
 
 [node name="CameraMover2" parent="." unique_id=1898929495 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.6314178)
@@ -58,8 +74,53 @@ dummy_child = NodePath("Marker3D")
 [node name="Area3D" type="Area3D" parent="CameraMover2" unique_id=1878968120]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=1127520643]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 2, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0082023, 2, -2.5150762)
 shape = SubResource("BoxShape3D_hka2l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=1134958050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.706, 2, 2.4999995)
+shape = SubResource("BoxShape3D_ovlhl")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CameraMover2/Area3D" unique_id=705460767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.706, 2, -7.5000005)
+shape = SubResource("BoxShape3D_ovlhl")
 
 [node name="Marker3D" type="Marker3D" parent="CameraMover2" unique_id=1598630730]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 6, 8)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2145040996]
+transform = Transform3D(-1.8358783e-08, 0, 1, 0, 0.5, 0, -0.42000002, 0, -4.371139e-08, -3.5664058, 2.045209, -10.736422)
+shaded = true
+double_sided = false
+texture = ExtResource("3_ovlhl")
+
+[node name="CameraMover3" parent="." unique_id=1274081750 node_paths=PackedStringArray("area", "dummy_child") instance=ExtResource("3_hka2l")]
+area = NodePath("Area3D")
+dummy_child = NodePath("Marker3D")
+
+[node name="Area3D" type="Area3D" parent="CameraMover3" unique_id=871013161]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraMover3/Area3D" unique_id=609415275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.807, 2, -10.485916)
+shape = SubResource("BoxShape3D_h4vyy")
+debug_color = Color(0.9872566, 0, 0.31992045, 0.41960785)
+
+[node name="Marker3D" type="Marker3D" parent="CameraMover3" unique_id=108793901]
+transform = Transform3D(-4.222196e-08, -0.25881904, 0.9659258, -1.131334e-08, 0.9659258, 0.25881904, -1, 0, -4.371139e-08, 3.275497, 5.412299, -10.496663)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=1882092062]
+transform = Transform3D(24, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2, -40)
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=367631435]
+transform = Transform3D(-9.616506e-07, 0, 1, 0, 4, 0, -22, 0, -4.371139e-08, 11.5, 2, -28.5)
+use_collision = true
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1838546726]
+transform = Transform3D(-9.616506e-07, 0, 1, 0, 4, 0, -22, 0, -4.371139e-08, -11.5, 2, -28.5)
+use_collision = true
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D7" unique_id=2071290023]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+operation = 2
+use_collision = true
