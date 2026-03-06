@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djkisleyasi3b"]
+
+[ext_resource type="PackedScene" uid="uid://co5y22t3mfedr" path="res://3D-assets/characters/assets/zoe.glb" id="1_e3ocr"]
+
+[node name="zoe" type="Node3D" unique_id=205553062]
+
+[node name="zoe" parent="." unique_id=379257375 instance=ExtResource("1_e3ocr")]
+transform = Transform3D(-0.21, 0, 3.1709117e-08, 0, 0.21, 0, -3.1709117e-08, 0, -0.21, 0, 0, 0)

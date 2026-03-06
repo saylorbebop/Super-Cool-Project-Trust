@@ -1,8 +1,9 @@
 extends Node3D
 
-enum CharacterModel { DEFAULT }
+enum CharacterModel { DEFAULT, ZOE }
 @onready var CharacterModelMap: Dictionary[CharacterModel, StringName] = {
-	CharacterModel.DEFAULT: "res://3D-assets/default-capsule.tscn"
+	CharacterModel.DEFAULT: "res://3D-assets/default-capsule.tscn",
+	CharacterModel.ZOE: "res://3D-assets/characters/scenes/zoe.tscn"
 }
 
 func switch_to(char: CharacterModel) -> void:

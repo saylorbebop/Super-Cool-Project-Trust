@@ -2,12 +2,12 @@
 extends CharacterBody3D
 
 const WALK_SPEED = 4.0
-const RUN_SPEED = 6.5
+const RUN_SPEED = 10.5 # 6.5
 const SLOWDOWN_COEFFICIENT = 3 # the higher, the faster. 1 = 1 second to stop after release of mvmnt key.
 
 func _ready() -> void:
 	# for the time being, we only have the default model to deal with
-	%CharacterModelManager.switch_to(%CharacterModelManager.CharacterModel.DEFAULT)
+	%CharacterModelManager.switch_to(%CharacterModelManager.CharacterModel.ZOE)
 
 ## most of the weird code in this file relating to axes and direction are all to accomodate
 ## the static but switching camera in this game's areas; once the camera rotates, pressing W should
@@ -15,7 +15,7 @@ func _ready() -> void:
 func get_axes(camera_transform: Transform3D) -> Dictionary:
 	var cam_fwd: Vector3 = -camera_transform.basis.z; cam_fwd.y = 0
 	var angles: Array = [
-		cam_fwd.angle_to(Vector3(0, 0, -1)), cam_fwd.angle_to(Vector3(0, 0, 1)),
+		cam_fwd.angle_to(Vector3(0, 0, 1)), cam_fwd.angle_to(Vector3(0, 0, -1)),
 		cam_fwd.angle_to(Vector3(-1, 0, 0)), cam_fwd.angle_to(Vector3(1, 0, 0))
 	]
 	
@@ -23,11 +23,11 @@ func get_axes(camera_transform: Transform3D) -> Dictionary:
 	
 	match angles.find(angles.min()): # im sorry its ugly but shaddup it works
 		0: # cam is facing -z
-			forward = Vector3(0, 0, -1); back = Vector3(0, 0, 1)
-			left = Vector3(-1, 0, 0);    right = Vector3(1, 0, 0)
-		1: # cam is facing +z
 			forward = Vector3(0, 0, 1);  back = Vector3(0, 0, -1)
 			left = Vector3(1, 0, 0);     right = Vector3(-1, 0, 0)
+		1: # cam is facing +z
+			forward = Vector3(0, 0, -1); back = Vector3(0, 0, 1)
+			left = Vector3(-1, 0, 0);    right = Vector3(1, 0, 0)
 		2: # cam is facing -x
 			forward = Vector3(-1, 0, 0); back = Vector3(1, 0, 0)
 			left = Vector3(0, 0, 1);     right = Vector3(0, 0, -1)
