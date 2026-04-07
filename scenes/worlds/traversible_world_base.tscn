@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://55fss7bxgsow"]
+
+[ext_resource type="PackedScene" uid="uid://driijvcgenuvs" path="res://scenes/characters/traversing_player.tscn" id="1_m3bkf"]
+
+[node name="traversible world base" type="Node2D" unique_id=630528277]
+
+[node name="traversing player" parent="." unique_id=43896799 instance=ExtResource("1_m3bkf")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1031164078]
+zoom = Vector2(10, 10)

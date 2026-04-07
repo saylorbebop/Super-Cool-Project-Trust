@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://driijvcgenuvs"]
+
+[ext_resource type="Script" uid="uid://bor16hyycpql6" path="res://scenes/characters/traversing_player.gd" id="1_b2joi"]
+[ext_resource type="SpriteFrames" uid="uid://dv74pd61en4mw" path="res://scenes/characters/spriteframe/default.tres" id="2_b2joi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2joi"]
+
+[node name="traversing player" type="CharacterBody2D" unique_id=43896799]
+script = ExtResource("1_b2joi")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=739557867]
+shape = SubResource("CapsuleShape2D_b2joi")
+
+[node name="visuals" type="AnimatedSprite2D" parent="." unique_id=968381634]
+unique_name_in_owner = true
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("2_b2joi")
+animation = &"up_walk"
