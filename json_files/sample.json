@@ -1,0 +1,9 @@
+{
+	"1": [
+		{"DialogueName": "Dialogue 1", "Character1": "John Doe", "Character2": "Jane Smith", "pose1:": "happy",
+	"pose2": "happy","text1":"Hello World!", "text2": "Hi World!", "Choices":{
+			"Choice 1": "Dialogue 2",
+			"Choice 2": "Dialogue 3"
+	}}
+	]
+}

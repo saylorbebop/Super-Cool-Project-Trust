@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://gdd2jqal7h51"]
+
+[ext_resource type="Script" uid="uid://bt1llj1ktmm15" path="res://2D_Scripts/parser.gd" id="1_sice8"]
+
+[node name="Parser" type="Node2D" unique_id=1063507064]
+script = ExtResource("1_sice8")
