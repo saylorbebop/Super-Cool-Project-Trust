@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-const WALK_SPEED := 200
-const RUN_SPEED := 400
+const WALK_SPEED := 100
+const RUN_SPEED := 200
 enum State { WALK, RUN }
 @onready var state: State
 
+func is_running():
+	return Input.is_action_pressed("traverse_run")
+
 func _physics_process(delta: float) -> void:
-	state = State.RUN if Input.is_action_pressed("traverse_run") else State.WALK
+	state = State.RUN if is_running() else State.WALK
 	var speed: float = RUN_SPEED if state == State.RUN else WALK_SPEED
 	var input_dir := Input.get_vector("traverse_left", "traverse_right", "traverse_up", "traverse_down")
 	self.velocity = input_dir * speed
@@ -29,7 +32,6 @@ func figure_out_animation(vector: Vector2, character_state: State):
 	elif vector.y != 0: # there is exclusively vertical movement
 		anim = "down" if vector.y > 0 else "up"
 	anim += "_run" if character_state == State.RUN else "_walk"
-	print("anim: %s" % anim)
 	%visuals.play(anim)
 	
 	

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cn05glqrlxedi"]
+
+[ext_resource type="Script" uid="uid://bad87a1cwpjxx" path="res://scenes/characters/traversal_npc_follower.gd" id="1_805ey"]
+[ext_resource type="SpriteFrames" uid="uid://dv74pd61en4mw" path="res://scenes/characters/spriteframe/default.tres" id="1_iuyup"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_805ey"]
+
+[node name="traversal_npc_follower" type="CharacterBody2D" unique_id=1095092990]
+script = ExtResource("1_805ey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1708435738]
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("1_iuyup")
+animation = &"down_run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16799783]
+shape = SubResource("CapsuleShape2D_805ey")
+disabled = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1621714393]
+unique_name_in_owner = true

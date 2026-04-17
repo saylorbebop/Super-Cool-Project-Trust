@@ -15,6 +15,10 @@ run/main_scene="uid://55fss7bxgsow"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueParser="*uid://c5g7dx57ymbjr"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

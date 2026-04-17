@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1u5o52087fkr"]
 
-[ext_resource type="Texture2D" uid="uid://bbt6p04uks3vv" path="res://image.webp" id="1_xqga4"]
+[ext_resource type="Texture2D" uid="uid://bbt6p04uks3vv" path="res://assets/main_menu.webp" id="1_xqga4"]
 [ext_resource type="PackedScene" uid="uid://xsaehb76n2qs" path="res://scenes/menus/main_menu_button.tscn" id="2_ovrgc"]
 
 [sub_resource type="GDScript" id="GDScript_ovrgc"]
@@ -62,7 +62,7 @@ text = "Options"
 
 [node name="Endless" parent="MarginContainer/main control/VBoxContainer" unique_id=364049677 instance=ExtResource("2_ovrgc")]
 layout_mode = 2
-text = "Endless"
+text = "Extras"
 
 [node name="Kickstarter" parent="MarginContainer/main control/VBoxContainer" unique_id=1290306693 instance=ExtResource("2_ovrgc")]
 layout_mode = 2
